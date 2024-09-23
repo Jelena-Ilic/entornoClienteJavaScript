@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba día2</title>
+</head>
+
+<body>
+
+    <script>
+        var imag = prompt("Dime el nombre de una imagen");
+        var numero = prompt("Dime el numero de veces que quieras que se repita");
+        if (numero > 0 && numero < 11) {
+            var texto = "";
+
+            for (let i = 1; i <= numero; i++) {
+                texto += "<img src='" + imag + "'>" // texto+=`<img src='${imag}'/>
+            };
+
+            document.body.innerHTML = texto;
+        } else {
+            alert("el numero no es válido");
+        }
+
+    </script>
+
+</body>
+
+</html>

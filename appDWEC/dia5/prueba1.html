@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba1</title>
+    <script>
+        var nombreUsuario = "Santiago";
+        let frase=" ";
+        let cont=0;
+        let i = 0;
+        
+        function contarCaracter(){
+            
+            if(document.getElementById("frase1").value.length>20){
+                alert("MUY GRANDE")
+            }
+        }
+
+        function comprobarAprobado(){
+
+            if(document.getElementById("frase2").value.indexOf("aprobado")!=-1){
+                alert("Pone aprobado");
+            } else {
+                alert("No pone aprobado");
+            }
+        }
+
+        function comprobarAdo(){
+            
+            if(document.getElementById("frase1").value.lastIndexOf("ado")!=-1){
+               alert(document.getElementById("frase1").value.lastIndexOf("ado"));
+            } else {
+                alert("NO APARECE");
+            }
+        }
+
+        function cuantosAprobados(){
+           
+            for (i = 0; i < document.getElementById("frase1").value.split(" ").length; i++) {
+                if(document.getElementById("frase1").value.split(" ")[i]=="aprobado"){
+                    cont++;
+                }
+                
+            }
+
+            alert(cont);
+        }
+
+        function devolverCaracteres(){
+
+          frase=prompt("Dime una frase");
+
+          alert(frase.charAt(4) + frase.charAt(5) + frase.charAt(6));
+
+          //frase.substr(3,6)
+          //frase.substring(3,6)
+        }
+
+        function mostrarCaracteres(){
+            frase=prompt("Dime una frase");
+
+            if(frase.indexOf("XYZ")!=-1){
+                alert(frase.substring(frase.indexOf("XYZ")+3, frase.indexOf("XYZ")+3+5));
+            }
+
+        }
+
+        function cambiarDaw(){
+            frase=prompt("Dime una frase");
+          alert(frase.replace("daw","DAW"));
+
+        }
+
+
+        function cambiarMayusculas(){
+            frase=prompt("Dime una palabra");
+            alert(frase.toLocaleUpperCase());
+        }
+
+        function cambiarMinusculas(){
+            frase=prompt("Dime una palabra");
+            alert(frase.toLocaleLowerCase());
+        }
+
+        function distintaLinea(){
+            frase=prompt("Dime una frase");
+            frase=frase.split("");
+            
+            for (i = 0; i < frase.length; i++) {
+                frase[i]=frase[i]+"\n";
+            }
+
+            alert(frase);
+        }
+
+        function separarNombres(){
+            frase=prompt("Dime una lista de nombres");
+
+            frase=frase.split(",");
+
+            for (i = 0; i < frase.length; i++) {
+                frase[i]=frase[i]+"\n";
+            }
+
+            alert(frase);
+
+        }
+        
+
+    </script>
+</head>
+<body>
+
+    <H1> USO DE STRINGS</H1>
+ 
+    <span>FRASE1: </span><input type="Text" id="frase1"><br/>
+ 
+    <span>FRASE2: </span><textarea id="frase2"></textarea><br/>
+ 
+    <input type="button" value="Enviar" onclick="contarCaracter()"> 
+    <input type="button" value="Comprobar" onclick="comprobarAprobado()">
+    <input type="button" value="Ado" onclick="comprobarAdo()">
+    <input type="button" value="Aprobado" onclick="cuantosAprobados()">
+    <input type="button" value="Caracteres" onclick="devolverCaracteres()">
+    <input type="button" value="XYZ" onclick="mostrarCaracteres()">
+    <input type="button" value="DAW" onclick="cambiarDaw()">
+    <input type="button" value="Mayusculas" onclick="cambiarMayusculas()">
+    <input type="button" value="Minusculas" onclick="cambiarMinusculas()">
+    <input type="button" value="DistintaLinea" onclick="distintaLinea()">
+    <input type="button" value="Separar comas" onclick="separarNombres()">
+ 
+ </body>
+</html>

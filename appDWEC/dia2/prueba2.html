@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de listas</title>
+    <script>
+        var listaLibros=["El señor de los anillos","Orgullo y prejuicio","Dune","Drácula"];
+        
+        function pintarLibros(lista){
+            let index;
+            let libro="";
+            for (index = 0; index < lista.length; index++) {
+                 libro +=`<h1>${lista[index]}</h1>`;
+            }
+            document.body.innerHTML=libro;
+             
+        };
+    </script>
+</head>
+<body>
+ <script>
+pintarLibros(listaLibros);
+ </script>   
+</body>
+</html>
