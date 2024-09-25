@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+    <script>
+        //Libro autor y año
+
+        var listaLibros = [["It", "Stephen King", 1978],
+        ["1984", "George Orwell", 1949]
+            , ["Revolución en la granja", "George Orwell", 1953]];
+
+        var listaLibros2 = [];
+        listaLibros2[0] = ["It", "Stephen King", 1978];
+        listaLibros2[1] = ["1984", "George Orwell", 1949];
+        listaLibros2[2] = ["Revolución en la granja", "George Orwell", 1953];
+
+        //MEJOR OPCION 
+        var listaLibros3 = new Array();
+        listaLibros3.push = ["It", "Stephen King", 1978];
+        listaLibros3.push = ["1984", "George Orwell", 1949];
+        listaLibros3.push = ["Revolución en la granja", "George Orwell", 1953];
+
+        window.onload = () => {
+            mostrarLibros(listaLibros);
+        }
+
+        function mostrarLibros(lista) {
+            if (document.getElementById("tablaLibros")) {
+                document.getElementById("tablaLibros").remove();
+            }
+            var codigoHTMLtabla = `<table id='tablaLibros'><thead><tr><th> <a  href="javascript:ordenarPorTitulo()">Titulo</a></th><th>Autor</th><th>Año</th></tr></thead><tbody>`
+
+            lista.forEach((libro, indice, array) => codigoHTMLtabla += "<tr><td>" + libro[0] + "</td><td>" + libro[1] + "</td><td>" + libro[2] + "</td></tr>");
+
+            document.body.insertAdjacentHTML("beforeend",codigoHTMLtabla+ "</tbody></table>");
+        }
+        //SIN TERMINAR  
+        function ordenarPorTitulo() {
+            let orden=true;
+            if(orden){
+            listaLibros.sort((a, b) => a[0] > b[0]);
+            mostrarLibros(listaLibros);
+        } else {
+            listaLibros.sort((a, b) => a[0] < b[0]);
+            mostrarLibros(listaLibros);
+        }
+        }
+
+        function filtrarPorTitulo() {
+            var tituloABuscar = document.getElementById("valorFiltrar").value;
+            var listaLibrosFiltrada = listaLibros.filter((libro) => libro[0].toLowerCase().includes(tituloABuscar.toLowerCase()));
+            mostrarLibros(listaLibrosFiltrada);
+        }
+
+    </script>
+    <style>
+        td {
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        table {
+            border: 2px solid darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Filtrar: <input type="text" id="valorFiltrar">
+        <button type="button" onclick="filtrarPorTitulo()">Filtrar por titulo</button>
+    </p>
+</body>
+
+</html>
