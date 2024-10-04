@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+     .oculto{
+        display: none;
+     }
+     .visible{
+        display: block;
+        color: red;
+     }
+     form{
+        width: 60px;
+     }
+    </style>
+    <script>
+        var listaUsuarios = [];
+
+        listaUsuarios.push(["Miguel", "1514lolo"]);
+        listaUsuarios.push(["Maria", "1216mimi"]);
+        listaUsuarios.push(["Carmen", "2526fifo"]);
+        listaUsuarios.push(["Diego", "8549lulu"]);
+        listaUsuarios.push(["Cristian", "1257jj"]);
+
+        function validar() {
+            let mail = document.getElementById("usuario").value;
+            let contrasena = document.getElementById("pass").value;
+
+            if (listaUsuarios.findIndex((usuario) => usuario[0]==mail && usuario[1]==contrasena)!=-1) {
+                //cargar pagina de aterrizaje
+                location.href="aterrizaje.html";
+            } else {
+                //mostrar mensaje de error
+                document.getElementById("errorCodigoClave").className="visible";
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <label for="usser">Usuario:</label>
+        <input type="text" id="usuario">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" id="pass">
+        <p id="errorCodigoClave" class="oculto">Contraseña/Usuario incorrecto</p>
+        <button type="button" onclick="validar()">Acceder</button>
+        <input type="reset" value="Borrar">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <style>
+        table,tr,th,td {
+            border: 2px solid blue;
+        }
+        #nuevo{
+            position: absolute;
+            top:200px;
+            left:200px;
+            z-index: 1;
+            border: 2px solid black;
+            background-color: white;
+            padding: 5px;
+        }
+        .oculto{
+            display: none;
+        }
+        .visible{
+            display: block;
+        }
+        .botonSalir{
+            margin-left: 90%;
+        }
+    </style>
+    <script>
+        onload = () => {
+            rellenaListaProyectos();
+            pintarProyectos(listaProyectos);
+        }
+        var listaProyectos = [];
+
+        function rellenaListaProyectos() {
+            listaProyectos.push([1, "Descripción 1", 11000]);
+            listaProyectos.push([10, "Descripción 3", 30000]);
+            listaProyectos.push([6, "Descripción 4", 40000]);
+            listaProyectos.push([2, "Descripción 5", 100000]);
+            listaProyectos.push([4, "Descripción 6", 900]);
+            listaProyectos.push([5, "Descripción 7", 7000]);
+            listaProyectos.push([3, "Descripción 2", 80000]);
+        }
+
+        function pintarProyectos(lista) {
+            let cuerpoTabla = document.getElementsByTagName("tbody")[0];
+            cuerpoTabla.innerHTML="";
+            let texto = "";
+            lista.forEach(proyecto => {
+                texto += `<tr><td>${proyecto[0]}</td>
+                <td>${proyecto[1]}</td>
+                <td>${proyecto[2]}</td>
+                </tr>`;
+            });
+            cuerpoTabla.insertAdjacentHTML("beforeend", texto);
+        }
+
+        function volverAtras(){
+            location.href="aterrizaje.html";
+        }
+
+        function ordenarAlfabeticamente(lista){
+          listaProyectos=listaProyectos.sort((a,b) => a[0]>b[0]);
+          
+            pintarProyectos(listaProyectos);
+        }
+
+        function crearNuevo(){
+            document.getElementById("nuevo").className="visible";
+        }
+
+        function salir(){
+            document.getElementById("nuevo").className="oculto";
+        }
+
+        function aceptar(){
+            let codigo=document.getElementById("codigo").value;
+            let descri=document.getElementById("descripcion").value;
+            let presu=document.getElementById("presupuesto").value;
+
+            listaProyectos.push([codigo,descri,presu]);
+
+            pintarProyectos(listaProyectos);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        <span>
+            <a href="proyectos.html">Proyectos</a>
+        </span>
+    </h1>
+    <div id="central">
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Descripción</th>
+                    <th>Presupuesto Inicial</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div></br>
+    <div id="acciones">
+        <button type="button" onclick="volverAtras()" id="cancelar">Cancelar</button>
+        <button type="button" onclick="ordenarAlfabeticamente(listaProyectos)" id="ordenar">Ordenar</button>
+        <button type="button" onclick="crearNuevo()">Nuevo</button>
+        <button type="button" onclick="pintarProyectos(listaProyectos)" id="imprimir">Imprimir</button>
+    </div>
+
+    <div id="nuevo" class="oculto">
+        <button type="button" onclick="salir()" class="botonSalir">X</button>
+        <p>Codigo: <input type="text" id="codigo"></p>
+        <p>Descripcion: <input type="text" id="descripcion"></p>
+        <p>Presupuesto: <input type="text" id="presupuesto"></p>
+        <button type="button" onclick="aceptar()">Aceptar</button>
+    </div>
+</body>
+
+</html>

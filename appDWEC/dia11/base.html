@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="">
+
+    <script>
+
+        /*function ejemplo1(){
+            var variable1=1;
+            let variable2=1;
+            const varible3=1;
+            varible4=1; //si no le pones nada automaticamente es global 
+        }
+
+        ejemplo1();
+        //console.log(varible1);
+        //console.log(varible2);
+        //console.log(varible3);
+        //console.log(varible4);
+
+        var fecha1=new Date();
+        var fecha2="14-01-2023";
+        var fecha3="29-02-2025";
+        var fecha4=new Date("12-12-2022");
+        var fecha5=new Date(2022,11,12);
+        var fecha6=new Date(2025,1,29);
+        console.log(fecha1);
+        console.log(fecha4);
+        console.log(fecha5);
+        console.log(fecha6);
+
+        console.log(fecha6.getDate());
+        console.log(fecha6.getDay());
+        console.log(fecha6.getFullYear());
+        console.log(fecha6.getMonth());
+
+        function esFechaValida(year, mes, dia){
+            var fecha=new Date(year,mes-1,dia);
+            
+            //los meses siempre son un día menos, el DATE devuelve el dia de la semana y el DAY el mes 
+            if(fecha.getMonth()==mes-1 && fecha.getDate()==dia && fecha.getFullYear()==year){
+                console.log("fecha valida");
+            } else {
+                console.log("fecha invalida");
+            }
+        }
+
+        esFechaValida(2025,2,25);
+        esFechaValida(2025,2,29);*/
+
+        /* function esUnaSemanaMas(year1,mes1,dia1,year2,mes2,dia2){
+             var primeraFecha=new Date(year1, mes1, dia1);
+             var segundaFecha=new Date(year2,mes2,dia2);
+ 
+             primeraFecha.setDate(dia1+7);
+ 
+             if(primeraFecha<segundaFecha){
+                 return true;
+             } else {
+                 return false;
+             }
+ 
+         }
+ 
+         esUnaSemanaMas(2025,1,4,2025,1,31)*/
+
+
+
+        function esNumero() {
+            var num = document.getElementById("operador1").value;
+            var num2 = document.getElementById("operador2").value;
+
+            if (isNaN(num) || isNaN(num2)) {
+                alert("Algun dato introducido no es un numero");
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+
+        function comprobarNumerosLista() {
+            var listaNumeros = document.getElementById("numeros").value.split(",");
+            var noNumero = false;
+
+            listaNumeros.forEach(numero => {
+                if (isNaN(numero)) {
+                    noNumero = true;
+                }
+            });
+
+            return noNumero;
+
+        }
+
+        function sumar() {
+            var num = document.getElementById("operador1").value;
+            var num2 = document.getElementById("operador2").value;
+            var resultado = 0;
+            if (esNumero()) {
+                resultado = parseFloat(num) + parseFloat(num2);
+                document.getElementById("resultado").value = resultado;
+            }
+
+        }
+
+        function restar() {
+            var num = document.getElementById("operador1").value;
+            var num2 = document.getElementById("operador2").value;
+            var resultado = 0;
+            if (esNumero()) {
+                resultado = parseFloat(num) - parseFloat(num2);
+                document.getElementById("resultado").value = resultado;
+            }
+
+        }
+
+        function multiplicar() {
+            var num = document.getElementById("operador1").value;
+            var num2 = document.getElementById("operador2").value;
+            var resultado = 0;
+            if (esNumero()) {
+                resultado = parseFloat(num) * parseFloat(num2);
+                document.getElementById("resultado").value = resultado;
+            }
+
+        }
+
+        function dividir() {
+            var num = document.getElementById("operador1").value;
+            var num2 = document.getElementById("operador2").value;
+            var resultado = 0;
+            if (esNumero()) {
+                resultado = parseFloat(num) / parseFloat(num2);
+                document.getElementById("resultado").value = resultado;
+            }
+
+        }
+
+        function maximo() {
+            if (comprobarNumerosLista() == false) {
+                var listaNumeros = document.getElementById("numeros").value.split(",");
+                var mayor = listaNumeros[0];
+                listaNumeros.forEach(numero => {
+                    if (numero > mayor) {
+                        mayor = numero;
+                    }
+
+                });            
+                 alert("El numero mayor es: " + mayor);
+            } else {
+                alert("Si has llegado aqui, es que no sabes poner numeros");
+            }
+        }
+
+        function minimo() {
+            if (comprobarNumerosLista() == false) {
+                var listaNumeros = document.getElementById("numeros").value.split(",");
+                var minimo = listaNumeros[0];
+                listaNumeros.forEach(numero => {
+                    if (numero < minimo) {
+                        minimo = numero;
+                    }
+
+                });            
+                 alert("El numero minimo es: " + minimo);
+            } else {
+                alert("Si has llegado aqui, es que no sabes poner numeros");
+            }
+        }
+
+        function media() {
+            if (comprobarNumerosLista() == false) {
+                var listaNumeros = document.getElementById("numeros").value.split(",");
+                var media=0;
+                var contador=0;
+               
+                listaNumeros.forEach(numero => {
+                    media=media+parseFloat(numero);
+                    contador++;
+                });      
+                media=media/contador;      
+                 alert("La media es: " + media);
+            } else {
+                alert("Si has llegado aqui, es que no sabes poner numeros");
+            }
+        }
+
+        function adivinaAdivinanza(){
+            
+            var numeroAdivina=Math.floor(Math.random()*10);
+            var contador=0;
+
+            do {
+                var numero=prompt("Dime un numero del 1 al 10");
+                contador++;
+            } while (numero!=numeroAdivina && contador<3);
+        }
+
+    </script>
+</head>
+
+<body>
+    <H1> USO DE STRINGS</H1>
+    <span>OPERADOR 1: </span><input type="Text" id="operador1"><br />
+    <span>OPERADOR 2: </span><textarea id="operador2"></textarea><br />
+    <span>RESULTADO: </span><input type="Text" id="resultado"><br />
+    <input type="button" value="SUMAR" onclick="sumar()">
+    <input type="button" value="RESTAR" onclick="restar()">
+    <input type="button" value="MULTIPLICAR" onclick="multiplicar()">
+    <input type="button" value="DIVIDIR" onclick="dividir()"><br /><br />
+    <span>Numeros: </span><textarea id="numeros"></textarea><br />
+    <input type="button" value="MAXIMO" onclick="maximo()">
+    <input type="button" value="MINIMO" onclick="minimo()">
+    <input type="button" value="MEDIA" onclick="media()">
+    <input type="button" value="ADIVINA" onclick="adivinaAdivinanza()">
+</body>
+
+</html>
