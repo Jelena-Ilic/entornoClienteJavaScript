@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+        class Dulce{
+            constructor(calorias,foto){
+                this.calorias=calorias;
+                this.foto=foto;
+            }
+            mostrarImagen(){
+                document.getElementById("imagenDulce").src=this.foto;
+                
+            }
+        }
+        onload=()=>{
+            var dulce1=new Dulce(10,"dulce1.jpeg");
+            dulce1.mostrarImagen();
+        }
+       
+    </script>
+</head>
+<body>
+    <img src="" id="imagenDulce"/>
+
+</body>
+</html>

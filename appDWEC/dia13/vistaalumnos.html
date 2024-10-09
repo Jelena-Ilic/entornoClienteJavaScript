@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid salmon;
+        }
+    </style>
+    <script src="clasealumno.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+       var listaAlumnos=[] //Variable global
+        onload =()=>{
+            cargarDatosAlumno();
+        }
+        function anadirAlumno(){
+            var alumno1=new alumno("Josefina","Fernandez",5,["DWEC"])
+            listaAlumnos.push(alumno1);
+            pintarAlumnos(listaAlumnos)
+        }
+        function cargarDatosAlumno(){
+            $.getJSON("datosAlumno.json",(lista)=>{
+                listaAlumnos=lista
+                listaAlumnos.map(alumno=>alumno.mostrarDetalles=function(){
+                    let div=`<div><p>Nombre: ${this.nombre}</p>
+                    <p>Apellidos: ${this.apellidos}</p>
+                    <p>Numero de matricula:${this.Matricula}</p>
+                    <p>Modulos:${this.listaModulos}</p></div>`;
+                    document.body.insertAdjacentHTML("beforeend",div);
+                })
+                console.log(listaAlumnos);
+                if(listaAlumnos.length>0){
+                pintarAlumnos(listaAlumnos);
+            }
+            });
+
+        }
+        /*
+        async function cargarDatosAlumno(){
+            let datosAlumnoTexto= await fetch("datosAlumno.json");
+            listaAlumnos= await datosAlumnoTexto.json();
+            console.log(listaAlumnos);
+            if(listaAlumnos.length>0){
+                pintarAlumnos();
+            }
+        }*/
+        function pintarAlumnos(lista){
+            lista.forEach(alumno => {
+                alumno.mostrarDetalles();
+            });
+        }
+        
+    </script>
+</head>
+<body>
+    <button type="button" onclick="anadirAlumno()">AÑADIR</button>
+</body>
+</html>
