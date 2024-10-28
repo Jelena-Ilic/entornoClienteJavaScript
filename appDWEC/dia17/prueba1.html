@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function noVocales(event) {
+
+            let caracter = String.fromCharCode(event.charCode || event.keyCode);
+            let listaNovalida = ["a", "e", "i", "o", "u"];
+            if (listaNovalida.indexOf(caracter.toLocaleLowerCase()) != -1) {
+                event.preventDefault(); // el evento no ha ocurrido
+            }
+        }
+        function mostrarMensaje(texto) {
+            alert(texto);
+        }
+        function crearEvento() {
+            document.getElementById("boton2").addEventListener("click",()=>{mostrarMensaje("HOLA")});
+            document.getElementById("boton3").addEventListener("click",()=>{mostrarMensaje("ADIOS")});
+        }
+
+        function mostrarResultado(id){
+            alert(9*id);
+        }
+
+        function crearTablaMultiplicar(){
+            let codigoHTML="<table id='tablaNueva'><tbody>";
+            for (let i = 1; i < 11; i++) {
+                codigoHTML+=`<tr><td>${i}x9</td><td><button type="button" id="but${i}" onclick="mostrarResultado(${i})">Resultado</button></td></tr>`;
+                
+            }
+
+            codigoHTML+="</tbody></table>";
+
+            if(document.getElementById("tablaNueva")){
+                document.getElementById("tablaNueva").remove();
+            }else {
+            document.getElementById("capa1").insertAdjacentHTML("beforeend",codigoHTML);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="text" id="caja1" onkeypress="noVocales(event)">
+    <button type="button" id="boton1" onclick="crearEvento()">Boton1</button>
+    <button type="button" id="boton2">Boton2</button>
+    <button type="button" id="boton3">Boton3</button>
+    <button type="button" id="boton4" onclick="crearTablaMultiplicar()">Boton4</button>
+    <div id="capa1"></div>
+</body>
+
+</html>
