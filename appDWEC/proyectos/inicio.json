@@ -1,0 +1,22 @@
+[
+    {
+        "titulo":"Salado",
+        "descripcion":"En esta sección encontraras muchas cositas saladas",
+        "foto":"./img/salado.jpg"
+    },
+    {
+        "titulo":"Dulce",
+        "descripcion":"En esta sección encontraras muchas cositas saladas",
+        "foto":"./img/dulce.jpg"
+    },
+    {
+        "titulo":"Panaderia",
+        "descripcion":"En esta sección encontraras muchas cositas saladas",
+        "foto":"./img/pan.jpg"
+    },
+    {
+        "titulo":"Eventos",
+        "descripcion":"En esta sección encontraras muchas cositas saladas",
+        "foto":"./img/salado.jpg"
+    }
+]

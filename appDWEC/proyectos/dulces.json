@@ -1,0 +1,14 @@
+[
+    {
+        "nombre":"Magdalena de chocolate",
+        "descripcion":"Una rica magdalenita que te va a ir a las cartucheras",
+        "precio":"2€",
+        "foto":"./img/magdalenachoco.webp"
+    },
+    {
+        "nombre":"Cruasan de cheescake",
+        "descripcion":"Como diria Arguiñano rico rico y con fundamento",
+        "precio":"2.50€",
+        "foto":"./img/cruasan.jpg"
+    }
+]

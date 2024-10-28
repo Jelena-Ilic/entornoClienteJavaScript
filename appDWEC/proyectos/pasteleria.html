@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madeleine</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madeleine</title>
+  <link rel="stylesheet" href="./pasteleria.css">
+  <script src="pasteleria.js"></script>
+  <script>
+    var listaProductos = [];
+    onload=()=>{
+      cargarProductos("inicio.json");
+    }
+
+  </script>
+<script src="https://kit.fontawesome.com/effcb77f2b.js" crossorigin="anonymous"></script></head>
+
 <body>
-    
+  <nav>
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i>Inicio</a></li>
+      <li><a href="#">Productos</a></li>
+      <li><a href="#">Contactanos</a></li>
+    </ul>
+  </nav>
+
+  <div id="portada">
+    <img
+      src="https://img.freepik.com/fotos-premium/ilustracion-colorida-varios-postres-como-pasteles-helados-dulces_658005-16877.jpg"
+      alt="">
+  </div>
+
+  <div id="productos">
+
+  </div>
 </body>
+
 </html>
