@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      /*  onload = () => {
+
+            document.getElementById("boton1").addEventListener("click", () => {
+                ventana1 = window.open("", "", "width=300px, height=300px");
+            });
+
+            document.getElementById("boton2").addEventListener("click", () => {
+                ventana2 = window.open("", "", "width=300px, height=300px");
+            });
+
+            document.getElementById("boton3").addEventListener("click", () => {
+                ventana3 = window.open("", "", "width=300px, height=300px");
+            });
+
+            document.getElementById("cerrar").addEventListener("click", () => {
+                ventana1.close();
+                ventana2.close();
+                ventana3.close();
+            });
+
+            document.getElementById("escribir").addEventListener("click",escribirTexto);
+        }
+
+        function escribirTexto(){
+                var seleccion = document.getElementById("selectVentana").value;
+            switch (seleccion) {
+                case "1":
+                    ventana1.document.body.innerHTML=document.getElementById("cajaTexto").value;
+                    break;
+                case "2":
+                ventana2.document.body.innerHTML=document.getElementById("cajaTexto").value;
+                    break;
+                case "3":
+                ventana1.document.body.innerHTML=document.getElementById("cajaTexto").value;
+                    break;
+
+                default:
+                    break;
+            }
+        }*/
+
+        var listaVentanas=[];
+        onload=()=>{
+            var listaBotones=[...document.getElementsByTagName("button")]; //los tres puntos convierten la colección que devuelve tagName en un array
+            listaBotones.slice(0,3).forEach((boton,indice)=>boton.addEventListener("click",()=> abrirVentana(indice))
+        );
+
+            listaBotones[3].addEventListener("click", escribir);
+            listaBotones[4].addEventListener("click", cerrar);
+            
+        }
+
+        function abrirVentana(posicion){
+            let ventana=window.open("", "", "width=300px, height=300px");
+            listaVentanas[posicion]=ventana;
+        }
+
+        function escribir(){
+            var texto=document.getElementById("cajaTexto").value;
+            var numeroVentana=document.getElementById("selectVentana").value;
+
+            if(listaVentanas.length>=(numeroVentana-1) && listaVentanas[numeroVentana-1]){
+            listaVentanas[numeroVentana-1].document.body.innerHTML+=texto;
+            } else{
+                alert("Esa ventana no esta abierta");
+            }
+        }
+
+        function cerrar(){
+            if(listaVentanas.length>=(numeroVentana-1) && listaVentanas[numeroVentana-1]){
+            listaVentanas[numeroVentana-1].close();
+            } else{
+                alert("Esa ventana no esta abierta");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" id="boton1">Abrir ventana</button>
+    <button type="button" id="boton2">Abrir ventana2</button>
+    <button type="button" id="boton3">Abrir ventana3</button>
+</br></br>
+    <select id="selectVentana">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+    Texto a escribir <input type="text" id="cajaTexto">
+    <button type="button" id="escribir">Escribir texto en ventana</button>
+</br></br>
+    <button type="button" id="cerrar">Cerrar Ventana</button>
+</body>
+
+</html>
