@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ejercicio1(){
+            let div3=document.getElementsByTagName("div")[2];
+            div3.style.backgroundColor="red";
+            div3.className="divRojo";
+        }
+
+        function ejercicio2(){
+            let imagenes = [...document.getElementsByTagName("img")];
+            imagenes.forEach(imagen=>imagen.style.border="2px solid green");
+
+            //[...document.querySelectorAll("img")].forEach(imagen=>imagen.style.border="2px solid green");;
+        }
+
+        function ejercicio3(){
+            document.getElementsByTagName("div")[2].getElementsByTagName("p")[2].innerHTML="cambiar";
+        }
+
+        function ejercicio4(){
+          let listaDiv=[...document.getElementsByTagName("div")];
+          listaDiv.forEach(div=>{
+            if(div.className=="divRojo"){
+                div.style.display="none";
+            }
+          })
+        }
+
+        function ejercicio5(){
+            let elementos=[...document.getElementsByTagName("div")[0].children];
+            elementos.forEach(elemento=> {
+                elemento.style.border="1px solid pink";
+            })
+        }
+
+        function ejercicio6(){
+            document.getElementById("boton3").previousElementSibling.style.display="none";
+            document.getElementById("boton3").nextElementSibling.style.display="none";
+        }
+
+        onload = () => {
+            for (let k = 0; k < 6; k++) {
+                var divPrincipal = document.createElement("div");
+                for (let i = 0; i < 3; i++) {
+                    var parrafo = document.createElement("p");
+                    let texto=document.createTextNode("Soy un parrafo");
+                    parrafo.appendChild(texto);
+                    divPrincipal.append(parrafo);
+                }
+
+                for (let j = 0; j < 22; j++) {
+                    var imagen = document.createElement("img");
+                    imagen.setAttribute("src", "../proyectoProfesor2/proyecto/imagenes/mujer1.png");
+                    imagen.setAttribute("style", "width: 50px;");
+                    divPrincipal.append(imagen);
+                }
+
+                let tabla=document.createElement("table");
+            tabla.setAttribute("style", "border:1px solid black;");
+            for (let i = 0; i < 3; i++) {
+                let filas=document.createElement("tr");
+                for (let j = 0; j < 5; j++) {
+                    let columnas=document.createElement("td");
+                columnas.setAttribute("style", "border:1px solid black;");
+                let contenido=document.createTextNode("Fila"+i+" Columna "+j);;
+                    columnas.appendChild(contenido);
+                    filas.appendChild(columnas);
+                }
+                tabla.appendChild(filas);
+
+            }
+            divPrincipal.appendChild(tabla);
+            document.body.insertAdjacentElement("beforeend", divPrincipal);
+            }
+
+          
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <button type="button" onclick="ejercicio1()">Ejercicio1</button>
+    <button type="button" onclick="ejercicio2()">Ejercicio2</button>
+    <button type="button" id="boton3" onclick="ejercicio3()">Ejercicio3</button>
+    <button type="button" onclick="ejercicio4()">Ejercicio4</button>
+    <button type="button" onclick="ejercicio5()">Ejercicio5</button>
+    <button type="button" onclick="ejercicio6()">Ejercicio6</button>
+</body>
+
+</html>
