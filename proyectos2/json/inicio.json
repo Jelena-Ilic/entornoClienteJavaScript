@@ -1,0 +1,26 @@
+[
+    {
+        "titulo": "Salado",
+        "foto": "./img/sandwich1.jfif",
+        "descripcion": "Chupa chups tart gummi bears ice cream bear claw macaroon toffee tiramisu shortbread. Bear claw topping caramels icing chocolate cake liquorice bonbon jujubes chocolate cake. Muffin marzipan cotton candy bear claw chupa chups dragée topping pudding marshmallow.",
+        "url": "./salado.html"
+    },
+    {
+        "titulo": "Dulce",
+        "foto": "./img/dulces.jfif",
+        "descripcion": "Chupa chups tart gummi bears ice cream bear claw macaroon toffee tiramisu shortbread. Bear claw topping caramels icing chocolate cake liquorice bonbon jujubes chocolate cake. Muffin marzipan cotton candy bear claw chupa chups dragée topping pudding marshmallow.",
+        "url": "./dulces.html"
+    },
+    {
+        "titulo": "Panaderia",
+        "foto": "./img/panes.jfif",
+        "descripcion": "Chupa chups tart gummi bears ice cream bear claw macaroon toffee tiramisu shortbread. Bear claw topping caramels icing chocolate cake liquorice bonbon jujubes chocolate cake. Muffin marzipan cotton candy bear claw chupa chups dragée topping pudding marshmallow.",
+        "url": "./panaderia.html"
+    },
+    {
+        "titulo": "Eventos",
+        "foto": "./img/evento.jfif",
+        "descripcion": "Chupa chups tart gummi bears ice cream bear claw macaroon toffee tiramisu shortbread. Bear claw topping caramels icing chocolate cake liquorice bonbon jujubes chocolate cake. Muffin marzipan cotton candy bear claw chupa chups dragée topping pudding marshmallow.",
+        "url": "./eventos.html"
+    }
+]

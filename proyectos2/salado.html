@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madeleine</title>
+    <link rel="stylesheet" href="./css/pasteleria.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/pasteleria.js"></script>
+    <script>
+        var listaProductos = [];
+        onload = () => {
+            cargarSalados("./json/salados.json");
+        }
+
+    </script>
+    <script src="https://kit.fontawesome.com/effcb77f2b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="./pasteleria.html">
+                <li>Inicio</li>
+            </a>
+            <a href="./dulces.html">
+                <li>Dulces</li>
+            </a>
+            <a href="./salado.html">
+                <li>Salados</li>
+            </a>
+            <a href="./panaderia.html">
+                <li>Panaderia</li>
+            </a>
+            <a href="./eventos.html">
+                <li>Eventos</li>
+            </a>
+            <a href="./contactanos">
+                <li>Contactanos</li>
+            </a>
+        </ul>
+    </nav>
+    <div id="portada">
+        <h1>Madeleine</h1>
+        <h2>Pastelería</h2>
+    </div>
+
+    <div class="listadoProductos">
+
+    </div>
+
+    <footer>
+        <div>
+            <p>Redes sociales</p>
+            <p><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
+            <p><a href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a></p>
+            <p><a href="#"><i class="fa-brands fa-facebook"></i></a> Facebook</p>
+        </div>
+
+        <div>
+            <p xmlns:cc="http://creativecommons.org/ns#">This work is marked with <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1" alt=""></a></p>
+        </div>
+
+        <div>
+            <p>Contacto</p>
+            <p><a href="#"><i class="fa-solid fa-phone"></i> 916475268</a></p>
+            <p><a href="#"><i class="fa-solid fa-envelope"></i> madeleine@gmail.com </a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

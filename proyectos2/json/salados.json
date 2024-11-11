@@ -1,0 +1,58 @@
+[
+    {
+        "id": "9",
+        "nombre": "Sandwiches de Miga",
+        "foto": "./img/sandwichMiga.jpg",
+        "descripcion": "Descripción lalalalalala",
+        "precio": "1€"
+    },
+    {
+        "id": "10",
+        "nombre": "Sandwiches Calientes",
+        "foto": "./img/caliente.jpg",
+        "descripcion": "Como diria Arguiñano rico rico y con fundamento",
+        "precio": "2.50€"
+    },
+    {
+        "id": "11",
+        "nombre": "Focaccias",
+        "foto": "./img/focaccia.jpg",
+        "descripcion": "Bueno para el corazón y la vista",
+        "precio": "3.50€"
+    },
+    {
+        "id": "12",
+        "nombre": "Saladitos",
+        "foto": "./img/saladitos.jpg",
+        "descripcion": "Una rica magdalenita que te va a ir a las cartucheras",
+        "precio": "2€"
+    },
+    {
+        "id": "13",
+        "nombre": "Sandwiches de Miga",
+        "foto": "./img/sandwichMiga.jpg",
+        "descripcion": "Descripción lalalalalala",
+        "precio": "1€"
+    },
+    {
+        "id": "14",
+        "nombre": "Sandwiches Calientes",
+        "foto": "./img/caliente.jpg",
+        "descripcion": "Como diria Arguiñano rico rico y con fundamento",
+        "precio": "2.50€"
+    },
+    {
+        "id": "15",
+        "nombre": "Focaccias",
+        "foto": "./img/focaccia.jpg",
+        "descripcion": "Bueno para el corazón y la vista",
+        "precio": "3.50€"
+    },
+    {
+        "id": "16",
+        "nombre": "Saladitos",
+        "foto": "./img/saladitos.jpg",
+        "descripcion": "Una rica magdalenita que te va a ir a las cartucheras",
+        "precio": "2€"
+    }
+]

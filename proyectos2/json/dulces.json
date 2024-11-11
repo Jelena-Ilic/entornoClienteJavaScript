@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "nombre": "Magdalena de chocolate",
+        "foto": "./img/magdalenachoco.webp",
+        "descripcion": "Una rica magdalenita que te va a ir a las cartucheras",
+        "precio": "2€"
+    },
+    {
+        "id": "2",
+        "nombre": "Cruasan de cheescake",
+        "foto": "./img/cruasan.jpg",
+        "descripcion": "Como diria Arguiñano rico rico y con fundamento",
+        "precio": "2.50€"
+    },
+    {
+        "id": "3",
+        "nombre": "Pastel de zanahoria",
+        "foto": "./img/zanahoria.jpg",
+        "descripcion": "Bueno para el corazón y la vista",
+        "precio": "3.50€"
+    },
+    {
+        "id": "4",
+        "nombre": "Magdalena de chocolate",
+        "foto": "./img/magdalenachoco.webp",
+        "descripcion": "Una rica magdalenita que te va a ir a las cartucheras",
+        "precio": "2€"
+    },
+    {
+        "id": "5",
+        "nombre": "Magdalena de chocolate",
+        "foto": "./img/magdalenachoco.webp",
+        "descripcion": "Una rica magdalenita que te va a ir a las cartucheras",
+        "precio": "2€"
+    },
+    {
+        "id": "6",
+        "nombre": "Cruasan de cheescake",
+        "foto": "./img/cruasan.jpg",
+        "descripcion": "Como diria Arguiñano rico rico y con fundamento",
+        "precio": "2.50€"
+    },
+    {
+        "id": "7",
+        "nombre": "Pastel de zanahoria",
+        "foto": "./img/zanahoria.jpg",
+        "descripcion": "Bueno para el corazón y la vista",
+        "precio": "3.50€"
+    },
+    {
+        "id": "8",
+        "nombre": "Magdalena de chocolate",
+        "foto": "./img/magdalenachoco.webp",
+        "descripcion": "Una rica magdalenita que te va a ir a las cartucheras",
+        "precio": "2€"
+    }
+]

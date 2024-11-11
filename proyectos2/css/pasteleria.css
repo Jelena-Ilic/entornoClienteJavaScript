@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --fontBase: 'Poppins';
+    --fontTitulo: 'Dancing Script', cursive;
+    --fontSubTitulo: 'Raleway', sans-serif;
+}
+
+body {
+    font-family: var(--fontBase);
+}
+
+.contenedor {
+    position: relative;
+}
+
+nav {
+    background-color: black;
+    padding: 1%;
+    display: flex;
+    justify-content: right;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 800;
+    list-style: none;
+}
+
+nav ul li {
+    background-color: #e586a1;
+    padding: 8px;
+    margin-left: 0.5em;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+nav ul li:hover {
+    background-color: #e0b1be;
+    color: black;
+    transition: 1s;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* PORTADA */
+#portada {
+    background-image: url(../img/portada.png);
+    width: 100%;
+    height: 90vh;
+    background-size: 100%;
+    margin-bottom: 4vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: var(--fontTitulo);
+    font-weight: 700;
+    font-size: 9em;
+}
+
+h2 {
+    font-family: var(--fontSubTitulo);
+    font-weight: 400;
+    font-size: 2em;
+    margin-top: -1em;
+}
+
+/* PRODUCTOS */
+.catalogo,
+.product {
+    background-color: lightcoral;
+    padding: 10px;
+    width: 22.6vw;
+    transition: 1s;
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 5px;
+    box-shadow: 2px -1px 10px #00000047;
+}
+
+.catalogo:hover {
+    background-color: #e0b1be;
+    transition: 1s;
+
+}
+
+.catalogo {
+    cursor: pointer;
+    text-align: center;
+}
+
+.catalogo div,
+.product div {
+    padding: 5px;
+}
+
+.catalogo div:last-child {
+    text-align: justify;
+    padding: 5px 40px 5px 40px;
+}
+
+.catalogo div:first-child {
+    font-size: 2em;
+    color: #000;
+    width: 90%;
+    border-bottom: 2px solid black;
+    line-height: 20px;
+    margin-left: 23px;
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+}
+
+.product div:first-child {
+    font-size: 1.2em;
+    color: #000;
+    width: 90%;
+    border-bottom: 2px solid black;
+    line-height: 20px;
+    margin-left: 23px;
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+}
+
+.product div:nth-child(3) {
+    width: 79%;
+    margin-left: 2em;
+    text-align: justify;
+}
+
+.product div:nth-child(4) {
+    text-align: right;
+}
+
+.catalogo img,
+.product img {
+    width: 80%;
+    height: 14em;
+}
+
+.catalogo img{
+    height: 30em;
+}
+
+.listadoProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.seleccion{
+    margin-top: auto;
+}
+
+.seleccion select{
+  width: 50px;
+  margin-right: 5px;
+}
+
+/*FOOTER*/
+
+footer {
+    background-color: black;
+    padding: 5px;
+    margin-top: 3em;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div {
+    padding: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a i {
+    font-size: 25px;
+}
+
+footer div:nth-child(2) {
+    margin-top: 3em;
+}
+
+.botonCarro {
+    padding: 0.8em 4em 0.8em 4em;
+    margin-top: auto;
+    background-color: #f08080;
+    border: 3px solid #000000;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.botonCarro:hover {
+    background-color: #e0b1be;
+    transition: 1s;
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 1200px) {
+
+    .catalogo,
+    .product {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .catalogo,
+    .product {
+        width: 45vw;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .catalogo,
+    .product {
+        width: 90vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
